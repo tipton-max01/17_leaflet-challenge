@@ -23,6 +23,15 @@ var geoData = "https://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/all_day
 // Grab data with d3
 d3.json(geoData, function(data) {
   console.log(data.features);
-  // Using the features array sent back in the API data, create a GeoJSON layer and add it to the map
 
+  // Creating a geoJSON layer with the retrieved data
+  L.geoJson(data).addTo(myMap);
+  // Passing in our style object
+  
 });
+
+
+// // Overlays that may be toggled on or off
+// var overlayMaps = {
+//   Cities: cityLayer
+// };
